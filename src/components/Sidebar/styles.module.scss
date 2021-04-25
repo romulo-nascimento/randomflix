@@ -1,0 +1,11 @@
+.sidebar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--purple-500);
+    position: relative;
+}
+
+.image {
+    mix-blend-mode: multiply;
+    filter: grayscale(1);
+}
