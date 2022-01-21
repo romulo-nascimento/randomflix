@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "server": "json-server server.json -w -d 1000 -p 3333"
@@ -15,11 +15,15 @@
     "next": "10.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-query": "^3.34.8",
     "sass": "^1.32.11"
   },
   "devDependencies": {
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.15",
     "typescript": "^4.2.4"
   }
 }
