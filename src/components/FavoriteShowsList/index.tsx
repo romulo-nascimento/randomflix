@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useFavoritesContext } from '../../contexts/FavoritesContext';
-import { Show } from '../../contexts/FavoritesContext/types';
+
 import Button from '../Button';
 import ShowTile from '../ShowTile';
+import { Show } from '../../types';
+import { useFavoritesContext } from '../../contexts/FavoritesContext';
 
 const FavoriteShowsList = () => {
   const { route } = useRouter();

@@ -1,12 +1,3 @@
-import RandomPicker from '../components/RandomPicker';
-
-function Home() {
-
-  return (
-    <section className="max-w-3xl mx-auto pt-10">
-      <RandomPicker />
-    </section>
-  );
-}
+import Home from './home';
 
 export default Home;

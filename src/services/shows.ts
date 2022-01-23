@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://api-randomflix.herokuapp.com',
 });
 
 export const fetchShowsByTerm = (term: string) => api.get('/show', {

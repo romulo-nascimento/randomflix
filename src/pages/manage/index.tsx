@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useState } from 'react';
 import SearchBar from '../../components/SearchBar';
 import SearchShowList from '../../components/SearchShowList';
@@ -15,7 +14,6 @@ const Home = () => {
   }, 1000);
 
   const handleSearchBarChange = async (searchString: string) => {
-    console.log(searchString);
     searchShows(searchString);
   };
 

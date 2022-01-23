@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "server": "json-server server.json -w -d 1000 -p 3333",
-    "lint": "eslint ./src/**/*.{ts,tsx} --max-warnings 0 --fix"
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -26,6 +26,7 @@
     "@typescript-eslint/parser": "^5.10.0",
     "autoprefixer": "^10.4.2",
     "eslint": "^8.7.0",
+    "eslint-config-next": "12.0.8",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",

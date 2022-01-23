@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useFavoritesContext } from '../../contexts/FavoritesContext';
-import { Show } from '../../contexts/FavoritesContext/types';
-import { fetchRandomEpisode } from '../../services/shows';
+
 import Button from '../Button';
 import Episode from '../Episode';
+import { Show } from '../../types';
+import { fetchRandomEpisode } from '../../services/shows';
+import { useFavoritesContext } from '../../contexts/FavoritesContext';
 
 const fetchEpisode = async (favoriteShows: Show[]) => {
   const showIds = favoriteShows.map(({ id }) => id);
