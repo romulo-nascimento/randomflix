@@ -3,9 +3,9 @@ import Manage from './manage';
 import { useFavoritesContext } from '../contexts/FavoritesContext';
 
 const Index = () => {
-    const { favoriteShows } = useFavoritesContext()
+  const { favoriteShows } = useFavoritesContext();
 
-    return favoriteShows.length ? <Home/> : <Manage/>
-}
+  return favoriteShows.length ? <Home/> : <Manage/>;
+};
 
 export default Index;
