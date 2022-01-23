@@ -1,35 +1,12 @@
-import styles from './styles.module.scss'
-import { useState } from 'react'
-import SearchBar from '../components/SearchBar'
-import debounce from '../utils/debounce'
-import { fetchShowsByTerm } from '../services/shows'
-import ShowList from '../components/ShowList'
+import RandomPicker from '../components/RandomPicker';
 
-const Home = () => {
-  const [searchResults, setSearchResults] = useState([])
-
-  const searchShows = debounce(async s => {
-    const { data } = await fetchShowsByTerm(s)
-
-    setSearchResults(data)
-  }, 1000);
-
-  const handleSearchBarChange = async (searchString: string) => {
-    console.log(searchString);
-    searchShows(searchString)
-  }
+function Home() {
 
   return (
-    <div className={styles.home}>
-       <SearchBar
-          onChange={handleSearchBarChange}
-       />
-       
-       <ShowList
-          shows={searchResults}
-        />
-    </div>
-  )
+    <section className="max-w-3xl mx-auto pt-10">
+      <RandomPicker />
+    </section>
+  );
 }
 
-export default Home
+export default Home;

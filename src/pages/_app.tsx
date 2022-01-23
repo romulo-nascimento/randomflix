@@ -1,36 +1,38 @@
-import '../styles/global.css'
+import '../styles/global.css';
 
-import Head from 'next/head'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import Head from 'next/head';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-import Header from '../components/Header'
-import Sidebar from '../components/Sidebar'
+import FavoritesProvider from '../contexts/FavoritesContext';
+import { AppProps } from 'next/dist/next-server/lib/router/router';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
-import styles from './styles.module.scss'
-import FavoritesProvider from '../contexts/FavoritesContext'
+import styles from './styles.module.scss';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
-const App = ({ Component, pageProps }) => {
+function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Head>
         <title>Random Sheldon</title>
       </Head>
-      <div className={styles.container}>
-        <div className={styles.main}>
-          <FavoritesProvider>
+      <FavoritesProvider>
+        <div className={`grid max-h-screen ${styles['home']}`}>
+          <header className={styles['home__header']}>
             <Header />
+          </header>
+          <main className={styles['home__main']}>
             <Component {...pageProps} />
-          </FavoritesProvider>
+          </main>
+          <aside className={styles['home__aside']}>
+            <Sidebar />
+          </aside>
         </div>
-        <aside className={styles.sidebar}>
-          <Sidebar />
-        </aside>
-      </div>
+      </FavoritesProvider>
     </QueryClientProvider>
-  )
-  
+  );
 }
 
-export default App
+export default App;

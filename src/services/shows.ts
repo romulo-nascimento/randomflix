@@ -1,13 +1,15 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000',
-})
+  baseURL: 'http://localhost:3000',
+});
 
-export const fetchShowsByTerm = (term: string, country = 'us' ) => {
-    return api.get('/show', {
-        params: { term, country }
-    });
-}
+export const fetchShowsByTerm = (term: string) => api.get('/show', {
+  params: { term },
+});
 
-export default api
+export const fetchRandomEpisode = (showIds: number[]) => api.get('/random', {
+  params: { showIds: showIds.join(',') },
+});
+
+export default api;
