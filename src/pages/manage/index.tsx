@@ -4,7 +4,7 @@ import SearchShowList from '../../components/SearchShowList';
 import { fetchShowsByTerm } from '../../services/shows';
 import debounce from '../../utils/debounce';
 
-const Home = () => {
+const Manage = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const searchShows = debounce(async s => {
@@ -38,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Manage;

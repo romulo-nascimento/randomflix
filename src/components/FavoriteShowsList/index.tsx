@@ -35,9 +35,11 @@ const FavoriteShowsList = () => {
         }
       </ul>
       <div className="flex flex-col pt-8 px-8 border-t-2">
-        <Link href={isManagingFavorites ? '/' : '/manage'}>
-          <Button>{isManagingFavorites ? 'Done' : 'Manage favorite shows'}</Button>
-        </Link>
+        <Button>
+          <Link href={isManagingFavorites ? '/' : '/manage'}>
+            {isManagingFavorites ? 'Done' : 'Manage favorite shows'}
+          </Link>
+        </Button>
       </div>
     </article>
   );
