@@ -1,7 +1,7 @@
 import '../styles/global.css';
 
 import Head from 'next/head';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
+import { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import FavoritesProvider from '../contexts/FavoritesContext';
