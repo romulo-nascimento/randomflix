@@ -1,6 +1,10 @@
 export interface Show {
+    id: number
     title: string
-    pictureSrc: string
-    imdbId: string
+    image: {
+        medium: string
+        original: string
+    }
+    genres: string[]
+    imdb: string
 }
-
