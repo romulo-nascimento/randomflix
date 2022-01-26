@@ -1,30 +1,35 @@
-import '../styles/global.scss'
+import '../styles/global.css';
 
-import Head from 'next/head'
+import Head from 'next/head';
+import { AppProps } from 'next/app';
 
-import Header from '../components/Header'
-import Sidebar from '../components/Sidebar'
+import FavoritesProvider from '../contexts/FavoritesContext';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Random Sheldon</title>
+        <title>RandomFlix</title>
       </Head>
-      <div className={styles.container}>
-        <div className={styles.main}>
-          <Header />
-          <Component {...pageProps} />
+      <FavoritesProvider>
+        <div className={`grid max-h-screen ${styles['home']}`}>
+          <header className={styles['home__header']}>
+            <Header />
+          </header>
+          <main className={styles['home__main']}>
+            <Component {...pageProps} />
+          </main>
+          <aside className={styles['home__aside']}>
+            <Sidebar />
+          </aside>
         </div>
-        <aside className={styles.sidebar}>
-          <Sidebar />
-        </aside>
-      </div>
+      </FavoritesProvider>
     </>
-  )
-  
+  );
 }
 
-export default MyApp
+export default App;
