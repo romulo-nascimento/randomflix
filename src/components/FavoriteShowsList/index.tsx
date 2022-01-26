@@ -12,7 +12,7 @@ const FavoriteShowsList = () => {
   const isManagingFavorites = route === '/manage';
 
   return (
-    <article className='flex flex-col py-8 max-h-screen h-full'>
+    <article className='flex flex-col py-8 md:max-h-screen h-full'>
       <h2 className="mb-4 px-8 flex-shrink-0">Your favorite shows</h2>
       <ul className="flex flex-col flex-grow overflow-y-auto px-8">
         {
@@ -33,7 +33,7 @@ const FavoriteShowsList = () => {
           ))
         }
       </ul>
-      <div className="flex flex-col pt-8 px-8 border-t-2">
+      <div className="flex flex-col pt-8 px-8 md:border-t-2">
         <Button href={isManagingFavorites ? '/' : '/manage'}>
           {isManagingFavorites ? 'Done' : 'Manage favorite shows'}
         </Button>
