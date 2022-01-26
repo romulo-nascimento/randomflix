@@ -11,7 +11,7 @@ const Episode = ({
   image
 }: EpisodeProps) => {
   return (
-    <article className="inline-flex flex-col rounded-3xl overflow-hidden bg-lightest-purple p-8">
+    <article className="inline-flex flex-col rounded-3xl overflow-hidden bg-lightest-purple p-4 md:p-8">
       <div className="rounded-3xl overflow-hidden bg-purple mb-4">
         <Image
           src={image.original}

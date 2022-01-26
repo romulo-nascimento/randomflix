@@ -16,7 +16,7 @@ function App({ Component, pageProps }: AppProps) {
         <title>RandomFlix</title>
       </Head>
       <FavoritesProvider>
-        <div className={`grid max-h-screen ${styles['home']}`}>
+        <div className={`md:grid md:max-h-screen ${styles['home']}`}>
           <header className={styles['home__header']}>
             <Header />
           </header>

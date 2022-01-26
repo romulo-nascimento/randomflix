@@ -22,7 +22,7 @@ const SearchShowList = ({ shows }: { shows: Show[] }) => {
   };
 
   return (
-    <ul className="grid gap-6 grid-cols-3">
+    <ul className="grid gap-6 grid-cols-2 md:grid-cols-3">
       {
         shows.map((show: Show) => (
           <ShowTile
