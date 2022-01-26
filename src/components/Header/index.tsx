@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <section className="flex justify-between items-center h-full px-12 border-b">
-      <h1>Random Sheldon</h1>
+      <h1>RandomFlix</h1>
       <span>{today}</span>
     </section>
   );

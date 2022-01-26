@@ -13,7 +13,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Random Sheldon</title>
+        <title>RandomFlix</title>
       </Head>
       <FavoritesProvider>
         <div className={`grid max-h-screen ${styles['home']}`}>
