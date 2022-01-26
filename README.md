@@ -1,6 +1,6 @@
 # RandomFlix
 
-Can't decide what to watch? RandomFlux chooses a random tv show episode for you to watch. 📺
+Can't decide what to watch? RandomFlix chooses a random tv show episode for you to watch. 📺
 
 ## Installation
 
