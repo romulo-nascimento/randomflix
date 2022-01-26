@@ -27,7 +27,7 @@ const Manage = () => {
   };
 
   return (
-    <section className="max-w-3xl mx-auto pt-10 flex flex-col max-h-full">
+    <section className="max-w-3xl mx-6 md:mx-auto pt-10 flex flex-col max-h-full">
       <SearchBar
         onChange={handleSearchBarChange}
       />
