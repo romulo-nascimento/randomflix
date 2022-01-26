@@ -1,20 +1,17 @@
 import '../styles/global.css';
 
 import Head from 'next/head';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { AppProps } from 'next/app';
 
 import FavoritesProvider from '../contexts/FavoritesContext';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
 import styles from './styles.module.scss';
 
-const queryClient = new QueryClient();
-
 function App({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Head>
         <title>Random Sheldon</title>
       </Head>
@@ -31,7 +28,7 @@ function App({ Component, pageProps }: AppProps) {
           </aside>
         </div>
       </FavoritesProvider>
-    </QueryClientProvider>
+    </>
   );
 }
 

@@ -1,8 +1,10 @@
-import { ReactNode } from 'react';
+import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 
 export interface ButtonProps {
     children: ReactNode
     outline?: boolean
     onClick?: () => void
-    className?: string
+    className?: string,
+    href?: string,
+    target?: HTMLAttributeAnchorTarget 
 }

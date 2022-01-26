@@ -1,12 +1,11 @@
-import RandomPicker from '../components/RandomPicker';
+import Home from './home';
+import Manage from './manage';
+import { useFavoritesContext } from '../contexts/FavoritesContext';
 
-function Home() {
+const Index = () => {
+  const { favoriteShows } = useFavoritesContext();
 
-  return (
-    <section className="max-w-3xl mx-auto pt-10">
-      <RandomPicker />
-    </section>
-  );
-}
+  return favoriteShows.length ? <Home/> : <Manage/>;
+};
 
-export default Home;
+export default Index;

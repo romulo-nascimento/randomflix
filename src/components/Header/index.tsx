@@ -1,20 +1,14 @@
-import format from 'date-fns/format'
-import ptBR from 'date-fns/locale/pt-BR'
-
-import styles from './styles.module.scss'
+import format from 'date-fns/format';
 
 const Header = () => {
-    const today = format(new Date(), 'EEEEEE, d MMMM', {
-        locale: ptBR
-    })
+  const today = format(new Date(), 'EEEEEE, d MMMM');
 
-    return (
-        <header className={styles.header}>
-            <h1>Random Sheldon</h1>
-            <span className={styles.date}>{today}</span>
-        </header>
-    )
-}
+  return (
+    <section className="flex justify-between items-center h-full px-12 border-b">
+      <h1>Random Sheldon</h1>
+      <span>{today}</span>
+    </section>
+  );
+};
 
-
-export default Header
+export default Header;

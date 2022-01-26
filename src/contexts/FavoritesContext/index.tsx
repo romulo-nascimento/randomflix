@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
 import { getFromStorage, saveOnStorage } from '../../utils/storage';
-import { Show } from './types';
+import { Show } from '../../types';
 
 interface FavoritesContext {
     favoriteShows: Show[]

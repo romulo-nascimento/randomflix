@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import Button from '../Button';
 import GenreList from './GenreList';
 import { ShowTileProps } from './type';
@@ -19,6 +20,7 @@ const ShowTile = ({
         layout="responsive"
         src={image}
         className="rounded-3xl"
+        alt="Show cover image"
       />
       <h3 className="my-6 font-bold text-base">{title}</h3>
       <GenreList genres={genres} />

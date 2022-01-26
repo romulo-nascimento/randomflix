@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useFavoritesContext } from '../../contexts/FavoritesContext';
-import { Show } from '../../contexts/FavoritesContext/types';
+
 import Button from '../Button';
 import ShowTile from '../ShowTile';
+import { Show } from '../../types';
+import { useFavoritesContext } from '../../contexts/FavoritesContext';
 
 const FavoriteShowsList = () => {
   const { route } = useRouter();
@@ -34,9 +34,9 @@ const FavoriteShowsList = () => {
         }
       </ul>
       <div className="flex flex-col pt-8 px-8 border-t-2">
-        <Link href={isManagingFavorites ? '/' : '/manage'}>
-          <Button>{isManagingFavorites ? 'Done' : 'Manage favorite shows'}</Button>
-        </Link>
+        <Button href={isManagingFavorites ? '/' : '/manage'}>
+          {isManagingFavorites ? 'Done' : 'Manage favorite shows'}
+        </Button>
       </div>
     </article>
   );

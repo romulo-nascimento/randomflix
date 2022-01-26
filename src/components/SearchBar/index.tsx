@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from 'react';
+
 import { SearchBarProps } from './types';
 
 const SearchBar = ({ onChange }: SearchBarProps) => {

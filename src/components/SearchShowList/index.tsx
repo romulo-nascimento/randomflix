@@ -1,6 +1,6 @@
-import { useFavoritesContext } from '../../contexts/FavoritesContext';
-import { Show } from '../../contexts/FavoritesContext/types';
 import ShowTile from '../ShowTile';
+import { Show } from '../../types';
+import { useFavoritesContext } from '../../contexts/FavoritesContext';
 
 const SearchShowList = ({ shows }: { shows: Show[] }) => {
   const { favoriteShows, addFavoriteShow, removeFavoriteShow } = useFavoritesContext();
