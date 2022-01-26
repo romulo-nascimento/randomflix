@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import Button from '../Button';
 import Episode from '../Episode';
+import Loader from '../Loader';
 import { Show } from '../../types';
 import { fetchRandomEpisode } from '../../services/shows';
 import { useFavoritesContext } from '../../contexts/FavoritesContext';
@@ -20,26 +21,37 @@ const fetchEpisode = async (favoriteShows: Show[]) => {
 
 const RandomPicker = () => {
   const { favoriteShows } = useFavoritesContext();
+  const [isLoading, setIsLoading] = useState(true);
   const [randomEpisode, setRandomEpisode] = useState(null);
 
   useEffect(() => {
     const fetchFirstEpisode = async () => {
-      const randomEpisode = await fetchEpisode(favoriteShows);
-  
-      setRandomEpisode(randomEpisode);
+      setIsLoading(true);
+      try {
+        const randomEpisode = await fetchEpisode(favoriteShows);
+    
+        setRandomEpisode(randomEpisode);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchFirstEpisode();
   }, [favoriteShows]);
 
   const handlePickEpisode = async () => {
-    const randomEpisode = await fetchEpisode(favoriteShows);
-
-    setRandomEpisode(randomEpisode);
+    setIsLoading(true);
+    try {
+      const randomEpisode = await fetchEpisode(favoriteShows);
+  
+      setRandomEpisode(randomEpisode);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return randomEpisode && (
-    <>
+    <Loader isLoading={isLoading}>
       <Episode
         name={randomEpisode.name}
         showTitle={randomEpisode.showTitle}
@@ -54,7 +66,7 @@ const RandomPicker = () => {
         </a>
         <Button onClick={handlePickEpisode} outline>Pick another episode</Button>
       </div>
-    </>
+    </Loader>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Loader } from '../../components';
 import SearchBar from '../../components/SearchBar';
 import SearchShowList from '../../components/SearchShowList';
 import { fetchShowsByTerm } from '../../services/shows';
@@ -6,14 +7,22 @@ import debounce from '../../utils/debounce';
 
 const Manage = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const searchShows = debounce(async s => {
-    const { data } = await fetchShowsByTerm(s);
-
-    setSearchResults(data);
+  const searchShows = debounce(async (searchString: string) => {
+    try {
+      if (searchString) {
+        const { data } = await fetchShowsByTerm(searchString);
+  
+        setSearchResults(data);
+      }
+    } finally {
+      setIsLoading(false);
+    }
   }, 1000);
 
   const handleSearchBarChange = async (searchString: string) => {
+    setIsLoading(true);
     searchShows(searchString);
   };
 
@@ -22,18 +31,20 @@ const Manage = () => {
       <SearchBar
         onChange={handleSearchBarChange}
       />
-      {
-        searchResults.length ? (
-          <>
-            <h2 className="my-8">{`${searchResults.length} shows found`}</h2>
-            <div className="overflow-y-auto pb-10">
-              <SearchShowList
-                shows={searchResults}
-              />
-            </div>
-          </>
-        ) : null
-      }
+      <Loader isLoading={isLoading}>
+        {
+          searchResults.length ? (
+            <>
+              <h2 className="my-8">{`${searchResults.length} shows found`}</h2>
+              <div className="overflow-y-auto pb-10">
+                <SearchShowList
+                  shows={searchResults}
+                />
+              </div>
+            </>
+          ) : null
+        }
+      </Loader>
     </section>
   );
 };

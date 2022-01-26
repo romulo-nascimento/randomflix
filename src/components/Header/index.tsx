@@ -4,7 +4,7 @@ const Header = () => {
   const today = format(new Date(), 'EEEEEE, d MMMM');
 
   return (
-    <section className="flex justify-between items-center h-full px-12">
+    <section className="flex justify-between items-center h-full px-12 border-b">
       <h1>Random Sheldon</h1>
       <span>{today}</span>
     </section>
